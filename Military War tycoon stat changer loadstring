@@ -1,0 +1,11 @@
+function setvalue(obj, val)
+   local newv = -((obj.Value - val))
+
+   if newv < 0 then
+       newv = math.abs(newv)
+   else
+       newv = -newv
+   end
+   game:GetService("ReplicatedStorage")["ACS_Engine"].Events.Refil:FireServer(obj, newv)
+end
+setvalue(game.Players.LocalPlayer.leaderstats.Money, 999999999999999999
